@@ -59,6 +59,89 @@ public class Persistencia {
         }
     }
 
+<<<<<<< HEAD
+    //NOMBRE
+    public static String getNombreUsuario(int id){
+
+    }
+
+    public static String setNombreUsuario(int id){
+
+    }
+
+    //APELLIDOS
+    public static String getApellidosUsuario(int id){
+
+    }
+
+    public static String setApellidosUsuario(int id){
+
+    }
+
+    //PASSWORD
+    public static String getPasswordUsuario(int id){
+
+    }
+
+    public static String setPasswordUsuario(int id){
+
+    }
+
+    //EMAIL
+    public static String getEmailUsuario(int id){
+
+    }
+
+    public static String setEmailUsuario(int id){
+
+    }
+
+    //TELEFONO
+    public static int getTelefonoUsuario(int id){
+
+    }
+
+    public static String setTelefonoUsuario(int id){
+
+    }
+
+    //SEXO
+    public static String getSexoUsuario(int id){
+
+    }
+
+    public static String setSexoUsuario(int id){
+
+    }
+
+    //CIUDAD
+    public static int getCiudadUsuario(int id){
+
+    }
+
+    public static int setCiudadUsuario(int id){
+
+    }
+
+    //PROVINCIA
+    public static String getProvinciaUsuario(int id){
+
+    }
+
+    public static String setProvinciaUsuario(int id){
+
+    }
+
+    //FOTO
+    public static String getFotoUsuario(int id){
+
+    }
+
+    public static String setFotoUsuario(int id){
+
+    }
+=======
+>>>>>>> 379b15004c564e85024ef14704e80d6ef8646016
 
 
     //MÉTODOS DE ANUNCIO
@@ -81,6 +164,10 @@ public class Persistencia {
         }
     }
 
+<<<<<<< HEAD
+    public static void eliminarAnuncio(){
+=======
+>>>>>>> 379b15004c564e85024ef14704e80d6ef8646016
 
     public static String getProvincia(int id) {
         Connection con=conectar();
@@ -144,7 +231,7 @@ public class Persistencia {
 
 
     //MÉTODOS DE MENSAJE
-    public void insertarMensaje(String asunto, String contenido, boolean estado) {
+    public static void insertarMensaje(String asunto, String contenido, boolean estado) {
         Connection con=conectar();
         String consulta = "INSERT INTO MENSAJE(ASUNTO, CONTENIDO, ESTADO) VALUES (?,?,?)";
         PreparedStatement ps = null;
@@ -160,6 +247,13 @@ public class Persistencia {
         }
     }
 
+<<<<<<< HEAD
+    public static void eliminarMensaje(){
+
+    }
+
+=======
+>>>>>>> 379b15004c564e85024ef14704e80d6ef8646016
     //MÉTODOS DE DEPORTE
     public static void insertarDeporte(String nombre, String imagen) {
         Connection con=conectar();
