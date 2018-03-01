@@ -59,7 +59,6 @@ public class Persistencia {
         }
     }
 
-<<<<<<< HEAD
     //NOMBRE
     public static String getNombreUsuario(int id){
 
@@ -140,8 +139,6 @@ public class Persistencia {
     public static String setFotoUsuario(int id){
 
     }
-=======
->>>>>>> 379b15004c564e85024ef14704e80d6ef8646016
 
 
     //MÉTODOS DE ANUNCIO
@@ -164,10 +161,7 @@ public class Persistencia {
         }
     }
 
-<<<<<<< HEAD
     public static void eliminarAnuncio(){
-=======
->>>>>>> 379b15004c564e85024ef14704e80d6ef8646016
 
     public static String getProvincia(int id) {
         Connection con=conectar();
@@ -204,13 +198,10 @@ public class Persistencia {
         }
     }
 
-<<<<<<< HEAD
     public static void eliminarMensaje(){
 
     }
 
-=======
->>>>>>> 379b15004c564e85024ef14704e80d6ef8646016
     //MÉTODOS DE DEPORTE
     public static void insertarDeporte(String nombre, String imagen) {
         Connection con=conectar();
