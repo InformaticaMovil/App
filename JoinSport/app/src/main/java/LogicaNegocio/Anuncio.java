@@ -1,17 +1,18 @@
 package LogicaNegocio;
 
 import java.sql.Date;
+import java.sql.Time;
 
 public class Anuncio {
     private int id;
     private String provincia;
     private String localidad;
     private Date fecha;
-    private Date hora;
+    private Time hora;
     private String direccion;
     private String recorrido;
 
-    public void Anuncio(int id, String p, String l, Date f, Date h, String d, String r){
+    public void Anuncio(int id, String p, String l, Date f, Time h, String d, String r){
         this.id = id;
         this.provincia = p;
         this.localidad = l;
@@ -45,11 +46,11 @@ public class Anuncio {
         this.fecha = fecha;
     }
 
-    public Date getHora() {
+    public Time getHora() {
         return hora;
     }
 
-    public void setHora(Date hora) {
+    public void setHora(Time hora) {
         this.hora = hora;
     }
 
