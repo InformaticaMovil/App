@@ -161,8 +161,6 @@ public class Persistencia {
         }
     }
 
-    public static void eliminarAnuncio(){
-
     public static String getProvincia(int id) {
         Connection con=conectar();
         String consulta = "Select PROVINCIA from DEPORTE where ID=?";
@@ -183,23 +181,6 @@ public class Persistencia {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }
-        return resultado;
-    }
-
-    public static String getLocalidad(int id) {
-        Connection con=conectar();
-        String consulta = "Select LOCALIDAD from DEPORTE where ID=?";
-        PreparedStatement ps = null;
-        String resultado="";
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setInt(1, id);
-            ResultSet rs=ps.executeQuery();
-            resultado=rs.getString(1);
-            ps.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
         return resultado;
     }
@@ -241,10 +222,6 @@ public class Persistencia {
         }
     }
 
-    public static void eliminarMensaje(){
-
-    }
-
     //MÉTODOS DE DEPORTE
     public static void insertarDeporte(String nombre, String imagen) {
         Connection con=conectar();
@@ -255,6 +232,68 @@ public class Persistencia {
             ps.setString(1, nombre);
             ps.setString(2, imagen);
             ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String getNombreDeporte(int id) {
+        Connection con=conectar();
+        String consulta = "SELECT NOMBRE from DEPORTE where ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
+    public static String getImagenDeporte(int id) {
+        Connection con=conectar();
+        String consulta = "Select IMAGEN from DEPORTE where ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
+    public static void setNombreDeporte(String nombre, int id) {
+        Connection con=conectar();
+        String consulta="UPDATE Deporte SET NOMBRE=? WHERE ID=?";
+        try {
+            PreparedStatement ps=con.prepareStatement(consulta);
+            ps.setString(1, nombre);
+            ps.setInt(2, id);
+            ps.executeQuery();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void setImagenDeporte(String imagen, int id) {
+        Connection con=conectar();
+        String consulta="UPDATE Deporte SET IMAGEN=? WHERE ID=?";
+        try {
+            PreparedStatement ps=con.prepareStatement(consulta);
+            ps.setString(1, imagen);
+            ps.setInt(2, id);
+            ps.executeQuery();
+            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
