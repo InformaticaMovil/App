@@ -19,7 +19,11 @@ public static class Persistencia {
                         " values(?,?,?,?,?,?,?,?,?)";
         PreparedStatement ps=con.prepareStatement(consulta);
         ps.setString(1, nombre);
-        ps.set
+        ps.setString(2, apellidos);
+        ps.setString(3, password);
+        ps.setString(4, email);
+        ps.setInt(5, telefono);
+        ps.setPaula(1, nombre);
 
 
     }
