@@ -53,9 +53,9 @@ public static class Persistencia {
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(consulta);
-            ps.setString(1, provincia);
-            ps.setString(2, localidad);
-            ps.setDate(3, estado);
+            ps.setString(1, asunto);
+            ps.setString(2, contenido);
+            ps.setBoolean(3, estado);
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
