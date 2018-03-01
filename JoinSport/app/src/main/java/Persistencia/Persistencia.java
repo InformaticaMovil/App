@@ -786,4 +786,70 @@ public class Persistencia {
             e.printStackTrace();
         }
     }
+
+    //NOMBRE
+    public static void setNombreDeporte(int id, String nombre){
+        Connection con=conectar();
+        String consulta = "UPDATE DEPORTE SET NOMBRE=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, nombre);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String getNombreDeporte(int id) {
+        Connection con=conectar();
+        String consulta = "SELECT NOMBRE FROM DEPORTE WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado = "";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
+    //IMAGEN
+    public static void setImagenDeporte(int id, String imagen){
+        Connection con=conectar();
+        String consulta = "UPDATE DEPORTE SET IMAGEN=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, imagen);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String getImagenDeporte(int id) {
+        Connection con=conectar();
+        String consulta = "SELECT IMAGEN FROM DEPORTE WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado = "";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
 }
