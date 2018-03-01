@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Date;
 
 public class Persistencia {
 
@@ -31,21 +33,36 @@ public class Persistencia {
         Connection con=conectar();
         String consulta="INSERT INTO Usuario(NOMBRE, APELLIDOS, PASSWORD, EMAIL, TELEFONO, SEXO, CIUDAD, PROVINCIA, FOTO) " +
                         " values(?,?,?,?,?,?,?,?,?)";
+        PreparedStatement ps = null;
         try {
-            PreparedStatement ps=con.prepareStatement(consulta);
+            ps=con.prepareStatement(consulta);
             ps.setString(1, nombre);
             ps.setString(2, apellidos);
             ps.setString(3, password);
             ps.setString(4, email);
             ps.setInt(5, telefono);
-            //ps.setPaula(1, nombre); //
+            ps.setString(6, sexo;
+            ps.setString(7, ciudad);
+            ps.setString(8, provincia);
+            ps.setString(9, foto);
+
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
+
+
     //MÉTODOS DE ANUNCIO
-    public void insertarAnuncio(String provincia, String localidad, Date fecha, Date hora, String direccion, String recorrido) {
+    public static void insertarAnuncio(String provincia, String localidad, Date fecha, Date hora, String direccion, String recorrido) {
         Connection con=conectar();
         String consulta = "INSERT INTO ANUNCIO(PROVINCIA, LOCALIDAD, FECHA, HORA, DIRECCIÓN, RECORRIDO) VALUES (?,?,?,?,?,?)";
         PreparedStatement ps = null;
@@ -57,11 +74,31 @@ public class Persistencia {
             ps.setDate(4, hora);
             ps.setString(5, direccion);
             ps.setString(6, recorrido);
+            ps.execute();
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+
+    public static String getProvincia(int id) {
+        Connection con=conectar();
+        String consulta = "Select PROVINCIA from DEPORTE where ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
 
     //MÉTODOS DE MENSAJE
     public void insertarMensaje(String asunto, String contenido, boolean estado) {
@@ -73,6 +110,7 @@ public class Persistencia {
             ps.setString(1, asunto);
             ps.setString(2, contenido);
             ps.setBoolean(3, estado);
+            ps.execute();
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -88,6 +126,7 @@ public class Persistencia {
             PreparedStatement ps=con.prepareStatement(consulta);
             ps.setString(1, nombre);
             ps.setString(2, imagen);
+            ps.execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }
