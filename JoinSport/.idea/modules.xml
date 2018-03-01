@@ -3,9 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JoinSport.iml" filepath="$PROJECT_DIR$/JoinSport.iml" />
+<<<<<<< HEAD
+      <module fileurl="file://C:\Users\nemigua\Desktop\App\JoinSport\JoinSport.iml" filepath="C:\Users\nemigua\Desktop\App\JoinSport\JoinSport.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\nemigua\Desktop\App\JoinSport\app\app.iml" filepath="C:\Users\nemigua\Desktop\App\JoinSport\app\app.iml" />
+=======
       <module fileurl="file://C:\Users\paezqua\Desktop\App\JoinSport\JoinSport.iml" filepath="C:\Users\paezqua\Desktop\App\JoinSport\JoinSport.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\paezqua\Desktop\App\JoinSport\app\app.iml" filepath="C:\Users\paezqua\Desktop\App\JoinSport\app\app.iml" />
+>>>>>>> f1413d06317f6efcd1d9c2e9113d95290dabfa81
     </modules>
   </component>
 </project>
