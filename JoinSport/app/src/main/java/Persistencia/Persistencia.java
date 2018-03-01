@@ -32,7 +32,7 @@ public class Persistencia {
                                 String sexo, String ciudad, String provincia, String foto) {
         Connection con=conectar();
         String consulta="INSERT INTO Usuario(NOMBRE, APELLIDOS, PASSWORD, EMAIL, TELEFONO, SEXO, CIUDAD, PROVINCIA, FOTO) " +
-                        " VALUES(?,?,?,?,?,?,?,?,?)";
+                        " values(?,?,?,?,?,?,?,?,?)";
         PreparedStatement ps = null;
         try {
             ps=con.prepareStatement(consulta);
@@ -59,6 +59,7 @@ public class Persistencia {
         }
     }
 
+<<<<<<< HEAD
     //NOMBRE
     public static String getNombreUsuario(int id){
 
@@ -139,11 +140,12 @@ public class Persistencia {
     public static String setFotoUsuario(int id){
 
     }
-
+=======
+>>>>>>> 379b15004c564e85024ef14704e80d6ef8646016
 
 
     //MÉTODOS DE ANUNCIO
-    public static void insertarAnuncio(String provincia, String localidad, Date fecha, Time hora, String direccion, String recorrido) {
+    public static void insertarAnuncio(String provincia, String localidad, Date fecha, Date hora, String direccion, String recorrido) {
         Connection con=conectar();
         String consulta = "INSERT INTO ANUNCIO(PROVINCIA, LOCALIDAD, FECHA, HORA, DIRECCIÓN, RECORRIDO) VALUES (?,?,?,?,?,?)";
         PreparedStatement ps = null;
@@ -162,13 +164,14 @@ public class Persistencia {
         }
     }
 
+<<<<<<< HEAD
+    public static void eliminarAnuncio(){
+=======
+>>>>>>> 379b15004c564e85024ef14704e80d6ef8646016
 
-    public static void eliminarAnuncio(){}
-
-
-    public static String getProvincia (int id) {
+    public static String getProvincia(int id) {
         Connection con=conectar();
-        String consulta = "SELECT PROVINCIA FROM ANUNCIO WHERE ID=?";
+        String consulta = "Select PROVINCIA from DEPORTE where ID=?";
         PreparedStatement ps = null;
         String resultado="";
         try {
@@ -192,7 +195,7 @@ public class Persistencia {
 
     public static String getLocalidad(int id) {
         Connection con=conectar();
-        String consulta = "SELECT LOCALIDAD FROM ANUNCIO WHERE ID=?";
+        String consulta = "Select LOCALIDAD from DEPORTE where ID=?";
         PreparedStatement ps = null;
         String resultado="";
         try {
@@ -203,72 +206,13 @@ public class Persistencia {
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
         return resultado;
     }
 
-
-    public static Time getHora(int id) {
+    public static Date getLocalidad(int id) {
         Connection con=conectar();
-        String consulta = "SELECT HORA FROM ANUNCIO WHERE ID=?";
-        PreparedStatement ps = null;
-        Time resultado=null;
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setInt(1, id);
-            ResultSet rs=ps.executeQuery();
-            resultado=Time(rs.getTime(1));
-            ps.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return resultado;
-    }
-
-    public static Date getFecha(int id) {
-        Connection con=conectar();
-        String consulta = "SELECT FECHA FROM ANUNCIO WHERE ID=?";
-        PreparedStatement ps = null;
-        Date resultado=null;
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setInt(1, id);
-            ResultSet rs=ps.executeQuery();
-            resultado=rs.getDate(1);
-            ps.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return resultado;
-    }
-
-    public static String getDireccion(int id) {
-        Connection con=conectar();
-        String consulta = "SELECT DIRECCION FROM ANUNCIO WHERE ID=?";
+        String consulta = "Select LOCALIDAD from DEPORTE where ID=?";
         PreparedStatement ps = null;
         String resultado="";
         try {
@@ -279,157 +223,8 @@ public class Persistencia {
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
         return resultado;
-    }
-
-    public static String getRecorrido(int id) {
-        Connection con=conectar();
-        String consulta = "SELECT RECORRIDO FROM ANUNCIO WHERE ID=?";
-        PreparedStatement ps = null;
-        String resultado="";
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setInt(1, id);
-            ResultSet rs=ps.executeQuery();
-            resultado=rs.getString(1);
-            ps.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return resultado;
-    }
-
-    public static void setProvincia(int id, String provincia) {
-        Connection con=conectar();
-        String consulta = "UPDATE ANUNCIO SET PROVINCIA=? WHERE ID=?";
-        PreparedStatement ps = null;
-        String resultado="";
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setString(1, provincia);
-            ps.setInt(2, id);
-            ResultSet rs=ps.executeQuery();
-            resultado=rs.getString(1);
-            ps.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void setLocalidad(int id, String localidad) {
-        Connection con=conectar();
-        String consulta = "UPDATE ANUNCIO SET LOCALIDAD=? WHERE ID=?";
-        PreparedStatement ps = null;
-        String resultado="";
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setString(1, localidad);
-            ps.setInt(2, id);
-            ResultSet rs=ps.executeQuery();
-            resultado=rs.getString(1);
-            ps.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void setFecha(int id, Date fecha) {
-        Connection con=conectar();
-        String consulta = "UPDATE ANUNCIO SET FECHA=? WHERE ID=?";
-        PreparedStatement ps = null;
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setDate(1, fecha);
-            ps.setInt(2, id);
-            ps.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void setHora(int id, Time hora) {
-        Connection con=conectar();
-        String consulta = "UPDATE ANUNCIO SET HORA=? WHERE ID=?";
-        PreparedStatement ps = null;
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setTime(1, hora);
-            ps.setInt(2, id);
-            ps.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void setRecorrido(int id, String recorrido) {
-        Connection con=conectar();
-        String consulta = "UPDATE ANUNCIO SET RECORRIDO=? WHERE ID=?";
-        PreparedStatement ps = null;
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setString(1, recorrido);
-            ps.setInt(2, id);
-            ps.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
 
@@ -452,11 +247,13 @@ public class Persistencia {
         }
     }
 
+<<<<<<< HEAD
     public static void eliminarMensaje(){
 
     }
 
-
+=======
+>>>>>>> 379b15004c564e85024ef14704e80d6ef8646016
     //MÉTODOS DE DEPORTE
     public static void insertarDeporte(String nombre, String imagen) {
         Connection con=conectar();
