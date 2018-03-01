@@ -42,4 +42,18 @@ public class Persistencia {
             e.printStackTrace();
         }
     }
+
+    //MÉTODOS DE DEPORTE
+    public static void insertarDeporte(String nombre, String imagen) {
+        Connection con=conectar();
+        String consulta="INSERT INTO Deporte(NOMBRE, IMAGEN) " +
+                " values(?,?)";
+        try {
+            PreparedStatement ps=con.prepareStatement(consulta);
+            ps.setString(1, nombre);
+            ps.setString(2, imagen);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
