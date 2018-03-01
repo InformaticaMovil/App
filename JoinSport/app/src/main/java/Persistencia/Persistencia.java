@@ -61,83 +61,299 @@ public class Persistencia {
 
     //NOMBRE
     public static String getNombreUsuario(int id){
-
+        Connection con=conectar();
+        String consulta = "SELECT NOMBRE FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
-    public static String setNombreUsuario(int id){
-
+    public static void setNombreUsuario(int id, String nombre){
+        Connection con=conectar();
+        String consulta = "UPDATE Usuario SET NOMBRE=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, nombre);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     //APELLIDOS
     public static String getApellidosUsuario(int id){
-
+        Connection con=conectar();
+        String consulta = "SELECT APELLIDOS FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
-    public static String setApellidosUsuario(int id){
-
+    public static void setApellidosUsuario(int id, String apellidos){
+        Connection con=conectar();
+        String consulta = "UPDATE Usuario SET APELLIDOS=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, apellidos);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     //PASSWORD
     public static String getPasswordUsuario(int id){
-
+        Connection con=conectar();
+        String consulta = "SELECT PASSWORD FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
-    public static String setPasswordUsuario(int id){
-
+    public static void setPasswordUsuario(int id, String password){
+        Connection con=conectar();
+        String consulta = "UPDATE Usuario SET PASSWORD=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, password);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     //EMAIL
     public static String getEmailUsuario(int id){
-
+        Connection con=conectar();
+        String consulta = "SELECT EMAIL FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
-    public static String setEmailUsuario(int id){
-
+    public static void setEmailUsuario(int id, String email){
+        Connection con=conectar();
+        String consulta = "UPDATE Usuario SET EMAIL=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, email);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     //TELEFONO
     public static int getTelefonoUsuario(int id){
-
+        Connection con=conectar();
+        String consulta = "SELECT TELEFONO FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        int resultado=0;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getInt(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
-    public static String setTelefonoUsuario(int id){
-
+    public static void setTelefonoUsuario(int id, String telefono){
+        Connection con=conectar();
+        String consulta = "UPDATE Usuario SET TELEFONO=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, telefono);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     //SEXO
     public static String getSexoUsuario(int id){
-
+        Connection con=conectar();
+        String consulta = "SELECT SEXO FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
-    public static String setSexoUsuario(int id){
-
+    public static void setSexoUsuario(int id, String sexo){
+        Connection con=conectar();
+        String consulta = "UPDATE Usuario SET SEXO=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, sexo);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     //CIUDAD
-    public static int getCiudadUsuario(int id){
-
+    public static String getCiudadUsuario(int id){
+        Connection con=conectar();
+        String consulta = "SELECT CIUDAD FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
-    public static int setCiudadUsuario(int id){
-
+    public static void setCiudadUsuario(int id, String ciudad){
+        Connection con=conectar();
+        String consulta = "UPDATE Usuario SET CIUDAD=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, ciudad);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     //PROVINCIA
     public static String getProvinciaUsuario(int id){
-
+        Connection con=conectar();
+        String consulta = "SELECT PROVINCIA FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
-    public static String setProvinciaUsuario(int id){
-
+    public static void setProvinciaUsuario(int id, String provincia){
+        Connection con=conectar();
+        String consulta = "UPDATE Usuario SET PROVINCIA=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, provincia);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     //FOTO
     public static String getFotoUsuario(int id){
-
+        Connection con=conectar();
+        String consulta = "SELECT PROVINCIA FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
-    public static String setFotoUsuario(int id){
-
+    public static void setFotoUsuario(int id, String foto){
+        Connection con=conectar();
+        String consulta = "UPDATE Usuario SET FOTO=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, foto);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -234,6 +450,105 @@ public class Persistencia {
             ps.setString(1, asunto);
             ps.setString(2, contenido);
             ps.setBoolean(3, estado);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //ASUNTO
+    public static String getAsunto(int id){
+        Connection con=conectar();
+        String consulta = "SELECT ASUNTO FROM MENSAJE WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
+    public static void setAsunto(int id, String asunto){
+        Connection con=conectar();
+        String consulta = "UPDATE MENSAJE SET ASUNTO=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, asunto);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //CONTENIDO
+    public static String getContenido(int id) {
+        Connection con=conectar();
+        String consulta = "SELECT CONTENIDO FROM MENSAJE WHERE ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
+    public static void setContenido(int id, String contenido){
+        Connection con=conectar();
+        String consulta = "UPDATE MENSAJE SET CONTENIDO=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, contenido);
+            ps.setInt(2, id);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //ESTADO
+    public static boolean getEstado(int id) {
+        Connection con=conectar();
+        String consulta = "SELECT ESTADO FROM MENSAJE WHERE ID=?";
+        PreparedStatement ps = null;
+        boolean resultado=false;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getBoolean(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
+    public static void setEstado(int id, boolean contenido){
+        Connection con=conectar();
+        String consulta = "UPDATE MENSAJE SET ESTADO=? WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setBoolean(1, contenido);
+            ps.setInt(2, id);
             ps.execute();
             ps.close();
         } catch (SQLException e) {
