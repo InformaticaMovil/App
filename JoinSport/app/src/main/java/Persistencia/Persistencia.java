@@ -4,10 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-<<<<<<< HEAD
 import java.sql.Date;
-=======
->>>>>>> 5dc1520c5557f7f7fd50e1252035f677956e1d7b
 
 public class Persistencia {
 
@@ -41,7 +38,6 @@ public class Persistencia {
             ps.setString(3, password);
             ps.setString(4, email);
             ps.setInt(5, telefono);
-            //ps.setPaula(1, nombre); //
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -66,6 +62,10 @@ public class Persistencia {
         }
     }
 
+    public void eliminarAnuncio(){
+
+    }
+
     //MÉTODOS DE MENSAJE
     public void insertarMensaje(String asunto, String contenido, boolean estado) {
         Connection con=conectar();
@@ -80,5 +80,9 @@ public class Persistencia {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void eliminarMensaje(){
+
     }
 }
