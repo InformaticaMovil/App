@@ -173,12 +173,55 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+
+            try {
+                con.close();
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return resultado;
+    }
+
+    public static String getLocalidad(int id) {
+        Connection con=conectar();
+        String consulta = "Select LOCALIDAD from DEPORTE where ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return resultado;
     }
+
+    public static Date getLocalidad(int id) {
+        Connection con=conectar();
+        String consulta = "Select LOCALIDAD from DEPORTE where ID=?";
+        PreparedStatement ps = null;
+        String resultado="";
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            resultado=rs.getString(1);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
+
 
 
     //MÉTODOS DE MENSAJE
