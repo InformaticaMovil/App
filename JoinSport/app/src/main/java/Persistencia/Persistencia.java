@@ -37,9 +37,15 @@ public class Persistencia {
             ps.setString(3, password);
             ps.setString(4, email);
             ps.setInt(5, telefono);
-            //ps.setPaula(1, nombre); //
+            ps.setString(6 , sexo);
+            ps.setString(7 , ciudad);
+            ps.setString(8 , provincia);
+            ps.setString(9 , foto);
+
         } catch (SQLException e) {
             e.printStackTrace();
+            ps.close();
+            con.close();
         }
     }
 
