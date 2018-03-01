@@ -1,10 +1,14 @@
 package Persistencia;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+<<<<<<< HEAD
 import java.sql.Date;
+=======
+>>>>>>> 2eb580fd80df30ec3bce23841fa551ec237a3c08
 
 public class Persistencia {
 
@@ -82,7 +86,22 @@ public class Persistencia {
         }
     }
 
+<<<<<<< HEAD
     public void eliminarMensaje(){
 
+=======
+    //MÉTODOS DE DEPORTE
+    public static void insertarDeporte(String nombre, String imagen) {
+        Connection con=conectar();
+        String consulta="INSERT INTO Deporte(NOMBRE, IMAGEN) " +
+                " values(?,?)";
+        try {
+            PreparedStatement ps=con.prepareStatement(consulta);
+            ps.setString(1, nombre);
+            ps.setString(2, imagen);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+>>>>>>> 2eb580fd80df30ec3bce23841fa551ec237a3c08
     }
 }
