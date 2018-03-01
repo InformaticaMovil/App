@@ -37,7 +37,7 @@ public class Persistencia {
             ps.setString(3, password);
             ps.setString(4, email);
             ps.setInt(5, telefono);
-            //ps.setPaula(1, nombre);
+            //ps.setPaula(1, nombre); //
         } catch (SQLException e) {
             e.printStackTrace();
         }
