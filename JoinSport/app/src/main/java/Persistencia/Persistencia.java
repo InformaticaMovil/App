@@ -43,6 +43,41 @@ public class Persistencia {
         }
     }
 
+    //MÉTODOS DE ANUNCIO
+    public void insertarAnuncio(String provincia, String localidad, Date fecha, Date hora, String direccion, String recorrido) {
+        Connection con=conectar();
+        String consulta = "INSERT INTO ANUNCIO(PROVINCIA, LOCALIDAD, FECHA, HORA, DIRECCIÓN, RECORRIDO) VALUES (?,?,?,?,?,?)";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, provincia);
+            ps.setString(2, localidad);
+            ps.setDate(3, fecha);
+            ps.setDate(4, hora);
+            ps.setString(5, direccion);
+            ps.setString(6, recorrido);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //MÉTODOS DE MENSAJE
+    public void insertarMensaje(String asunto, String contenido, boolean estado) {
+        Connection con=conectar();
+        String consulta = "INSERT INTO MENSAJE(ASUNTO, CONTENIDO, ESTADO) VALUES (?,?,?)";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, asunto);
+            ps.setString(2, contenido);
+            ps.setBoolean(3, estado);
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     //MÉTODOS DE DEPORTE
     public static void insertarDeporte(String nombre, String imagen) {
         Connection con=conectar();
