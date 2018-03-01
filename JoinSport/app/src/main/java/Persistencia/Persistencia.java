@@ -3,8 +3,20 @@ package Persistencia;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class Persistencia {
-    public void conectar() {
+public static class Persistencia {
+
+    public Connection conectar() {
+        Connection conexionMySQL = null;
+        Class.forName("com.mysql.jdbc.Driver").newInstance ();
+        conexionMySQL = DriverManager.getConnection("jdbc:mysql://99.000webhost.io:3306/id4898649", "root", "Jsport2018");
+    }
+
+    //MÉTODOS DE USUARIO
+    public void insertarUsuario(String nombre, String apellidos, String password, String email, int telefono,
+                                String sexo, String ciudad, String provincia, String foto) {
+        Connection con=conectar();
+        PreparedStatement ps=con.prepareStatement(insert into USUARIO values(values()));
+
 
     }
 }
