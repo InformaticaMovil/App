@@ -9,6 +9,6 @@ public class Inicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        //Ventana inicio APP
+        //Ventana inicio APP12
     }
 }
