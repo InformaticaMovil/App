@@ -15,7 +15,11 @@ public static class Persistencia {
     public void insertarUsuario(String nombre, String apellidos, String password, String email, int telefono,
                                 String sexo, String ciudad, String provincia, String foto) {
         Connection con=conectar();
-        PreparedStatement ps=con.prepareStatement(insert into USUARIO values(values()));
+        String consulta="INSERT INTO Usuario(NOMBRE, APELLIDOS, PASSWORD, EMAIL, TELEFONO, SEXO, CIUDAD, PROVINCIA, FOTO) " +
+                        " values(?,?,?,?,?,?,?,?,?)";
+        PreparedStatement ps=con.prepareStatement(consulta);
+        ps.setString(1, nombre);
+        ps.set
 
 
     }
