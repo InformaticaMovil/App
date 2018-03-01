@@ -1,6 +1,6 @@
 package LogicaNegocio;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Anuncio {
     private int id;
