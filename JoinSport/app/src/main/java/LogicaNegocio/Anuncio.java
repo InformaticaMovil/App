@@ -16,7 +16,7 @@ public class Anuncio {
         this.id = id;
         this.provincia = p;
         this.localidad = l;
-        this.fecha = h;
+        this.fecha = f;
         this.hora = h;
         this.direccion = d;
         this.recorrido = r;

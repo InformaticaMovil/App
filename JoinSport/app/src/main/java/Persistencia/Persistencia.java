@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date;
+import java.sql.Time;
 
 public class Persistencia {
 
@@ -41,7 +42,7 @@ public class Persistencia {
             ps.setString(3, password);
             ps.setString(4, email);
             ps.setInt(5, telefono);
-            ps.setString(6, sexo;
+            ps.setString(6, sexo);
             ps.setString(7, ciudad);
             ps.setString(8, provincia);
             ps.setString(9, foto);
@@ -368,7 +369,7 @@ public class Persistencia {
             ps.setString(1, provincia);
             ps.setString(2, localidad);
             ps.setDate(3, fecha);
-            ps.setDate(4, hora);
+            ps.setTime(4, hora);
             ps.setString(5, direccion);
             ps.setString(6, recorrido);
             ps.execute();
@@ -440,8 +441,8 @@ public class Persistencia {
         try {
             ps = con.prepareStatement(consulta);
             ps.setInt(1, id);
-            ResultSet rs=ps.executeQuery();
-            resultado=Time(rs.getTime(1));
+            ResultSet rs = ps.executeQuery();
+            resultado = rs.getTime(1);
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
