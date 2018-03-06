@@ -46,7 +46,28 @@ public class Persistencia {
             ps.setString(7, ciudad);
             ps.setString(8, provincia);
             ps.setString(9, foto);
+            ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
+        }
+    }
+
+    public static void eliminarUusario(int id) {
+        Connection con=conectar();
+        String consulta="DELETE FROM Usuario WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps=con.prepareStatement(consulta);
+            ps.setInt(1, id);
+            ps.execute();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -71,9 +92,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -87,9 +115,16 @@ public class Persistencia {
             ps.setString(1, nombre);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -104,9 +139,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -120,9 +162,16 @@ public class Persistencia {
             ps.setString(1, apellidos);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -137,9 +186,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -153,9 +209,16 @@ public class Persistencia {
             ps.setString(1, password);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -170,9 +233,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -186,9 +256,16 @@ public class Persistencia {
             ps.setString(1, email);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -203,9 +280,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getInt(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -219,9 +303,16 @@ public class Persistencia {
             ps.setString(1, telefono);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -236,9 +327,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -252,9 +350,16 @@ public class Persistencia {
             ps.setString(1, sexo);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -269,9 +374,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -285,9 +397,16 @@ public class Persistencia {
             ps.setString(1, ciudad);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -302,9 +421,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -318,9 +444,16 @@ public class Persistencia {
             ps.setString(1, provincia);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -335,9 +468,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -351,9 +491,16 @@ public class Persistencia {
             ps.setString(1, foto);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -373,14 +520,40 @@ public class Persistencia {
             ps.setString(5, direccion);
             ps.setString(6, recorrido);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
 
-    public static void eliminarAnuncio(){}
+    public static void eliminarAnuncio(int id){
+        Connection con=conectar();
+        String consulta="DELETE FROM ANUNCIO WHERE ID=?";
+        PreparedStatement ps = null;
+        try {
+            ps=con.prepareStatement(consulta);
+            ps.setInt(1, id);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
 
 
     public static String getProvincia (int id) {
@@ -663,9 +836,16 @@ public class Persistencia {
             ps.setString(2, contenido);
             ps.setBoolean(3, estado);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -680,9 +860,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -696,9 +883,16 @@ public class Persistencia {
             ps.setString(1, asunto);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -713,9 +907,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -729,9 +930,16 @@ public class Persistencia {
             ps.setString(1, contenido);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -746,9 +954,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getBoolean(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -762,15 +977,19 @@ public class Persistencia {
             ps.setBoolean(1, contenido);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
-    public static void eliminarMensaje(){
-
-    }
 
 
     //MÉTODOS DE DEPORTE
@@ -785,6 +1004,14 @@ public class Persistencia {
             ps.execute();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -798,9 +1025,16 @@ public class Persistencia {
             ps.setString(1, nombre);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -814,9 +1048,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
@@ -831,9 +1072,16 @@ public class Persistencia {
             ps.setString(1, imagen);
             ps.setInt(2, id);
             ps.execute();
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -847,9 +1095,16 @@ public class Persistencia {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
-            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return resultado;
     }
