@@ -11,8 +11,10 @@ public class Anuncio {
     private Time hora;
     private String direccion;
     private String recorrido;
+    private int creador;
+    private int deporte;
 
-    public void Anuncio(int id, String p, String l, Date f, Time h, String d, String r){
+    public Anuncio(int id, String p, String l, Date f, Time h, String d, String r, int creador, int deporte){
         this.id = id;
         this.provincia = p;
         this.localidad = l;
@@ -20,6 +22,8 @@ public class Anuncio {
         this.hora = h;
         this.direccion = d;
         this.recorrido = r;
+        this.creador=creador;
+        this.deporte=deporte;
     }
 
     public String getProvincia() {
@@ -69,4 +73,13 @@ public class Anuncio {
     public void setRecorrido(String recorrido) {
         this.recorrido = recorrido;
     }
+
+    public int getDeporte() {return deporte;}
+
+    public void setDeporte(int deporte){this.deporte=deporte;}
+
+    public int getCreador() {return creador;}
+
+    public void setCreador (int creador) {this.creador=creador;}
+
 }
