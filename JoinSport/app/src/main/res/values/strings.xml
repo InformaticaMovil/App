@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">JoinSport</string>
+<<<<<<< HEAD
     <string name="title_activity_registro">Registro</string>
+=======
+    <string name="title_activity_inciar_sesion">InciarSesion</string>
+>>>>>>> origin/master
 </resources>
