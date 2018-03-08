@@ -19,7 +19,7 @@ public class Persistencia {
         Connection conexionMySQL = null;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            conexionMySQL = DriverManager.getConnection("jdbc:mysql://localhost:3306/id4898649_joinsport", "root", "root");
+            conexionMySQL = DriverManager.getConnection("jdbc:mysql://localhost:3306/JOINSPORT", "root", "root");
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
