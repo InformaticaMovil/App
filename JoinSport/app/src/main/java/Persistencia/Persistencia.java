@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import LogicaNegocio.Anuncio;
+import LogicaNegocio.Deporte;
 
 public class Persistencia {
 
@@ -539,7 +540,6 @@ public class Persistencia {
 
         }
     }
-
 
     public static Anuncio getAnuncio(int id) {
         Anuncio resultado=null;
@@ -1110,6 +1110,33 @@ public class Persistencia {
             }
 
         }
+    }
+
+    public static ArrayList<String> listaDesportes() {
+        Connection con=conectar();
+        String consulta = "SELECT NOMBRE FROM DEPORTE";
+        PreparedStatement ps = null;
+        ResultSet resultado = null;
+        ArrayList<String> Lista = new ArrayList();
+        try {
+            ps = con.prepareStatement(consulta);
+            resultado = ps.executeQuery();
+            while(resultado.next()){
+                String nombre = resultado.getString("nombre");
+                Lista.add(nombre);
+            }
+        } catch (SQLException e) {
+        e.printStackTrace();
+        } finally {
+            try {
+                resultado.close();
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return Lista;
     }
 
     //NOMBRE
