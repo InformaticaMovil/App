@@ -21,6 +21,7 @@ public class Registro extends AppCompatActivity {
         setContentView(R.layout.activity_registro);
 
         EditText Nombre = findViewById(R.id.txNombre);
+        if (Persistencia.getNombreUsuario())
         EditText Apellidos = findViewById(R.id.txApellidos);
         EditText Sexo = findViewById(R.id.txSexo);
         EditText Telefono = findViewById(R.id.txTelefono);
@@ -42,6 +43,7 @@ public class Registro extends AppCompatActivity {
         if (Running.isChecked()) {listaDeportesChecked.add(Running); }
 
     }
+
 
 
     public void registrar() {

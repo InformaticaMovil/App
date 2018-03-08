@@ -86,6 +86,10 @@ public class Persistencia {
         }
     }
 
+    public static boolean validar(){
+
+    }
+
     //NOMBRE
     public static String getNombreUsuario(int id){
         Connection con=conectar();
