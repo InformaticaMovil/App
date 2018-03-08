@@ -96,6 +96,7 @@ public class Persistencia {
             ps = con.prepareStatement(consulta);
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
+            rs.next();
             resultado=rs.getString(1);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -190,6 +191,7 @@ public class Persistencia {
             ps = con.prepareStatement(consulta);
             ps.setString(1, email);
             ResultSet rs=ps.executeQuery();
+            rs.next();
             resultado=rs.getString(1);
         } catch (SQLException e) {
             e.printStackTrace();
