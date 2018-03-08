@@ -25,14 +25,12 @@ public class Iniciar_Sesion extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (datosValidos()) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setMessage("Datos correctos");
-                    AlertDialog alert = builder.create();
-                    alert.show();
+                    Log.d("Datos validos");
                     //Ir a la pantalla de los anuncios, no está creada todavía
                     /*Intent CambiarActivity = new Intent(getApplicationContext(), Registro.class);
                     startActivity(CambiarActivity);*/
                 } else {
+                    Log.d("Datos invalidos");
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setMessage("Datos incorrectos");
                     AlertDialog alert = builder.create();
