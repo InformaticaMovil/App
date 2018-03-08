@@ -181,14 +181,14 @@ public class Persistencia {
     }
 
     //PASSWORD
-    public static String getPasswordUsuario(int id){
+    public static String getPasswordUsuario(String email){
         Connection con=conectar();
-        String consulta = "SELECT PASSWORD FROM Usuario WHERE ID=?";
+        String consulta = "SELECT PASSWORD FROM Usuario WHERE EMAIL=?";
         PreparedStatement ps = null;
         String resultado="";
         try {
             ps = con.prepareStatement(consulta);
-            ps.setInt(1, id);
+            ps.setString(1, email);
             ResultSet rs=ps.executeQuery();
             resultado=rs.getString(1);
         } catch (SQLException e) {

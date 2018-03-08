@@ -51,10 +51,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/txEmail"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginBottom="216dp"
+        android:layout_marginBottom="208dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -66,10 +66,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/txPwd"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="144dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btIniciarSesion"
         android:layout_width="135dp"
         android:layout_height="40dp"
         android:layout_marginBottom="80dp"
@@ -110,13 +110,26 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="299dp"
-        android:layout_height="288dp"
+        android:layout_width="268dp"
+        android:layout_height="282dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/rectangulo"
-        tools:layout_editor_absoluteY="197dp" />
+        tools:layout_editor_absoluteY="196dp" />
+
+    <TextView
+        android:id="@+id/txError"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Error: Datos incorrectos"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="231dp" />
 
 </android.support.constraint.ConstraintLayout>
