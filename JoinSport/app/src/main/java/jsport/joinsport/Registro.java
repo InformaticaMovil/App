@@ -2,7 +2,16 @@ package jsport.joinsport;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import LogicaNegocio.Deporte;
+import Persistencia.Persistencia;
 
 public class Registro extends AppCompatActivity {
 
@@ -20,7 +29,20 @@ public class Registro extends AppCompatActivity {
         EditText Email = findViewById(R.id.txEmail);
         EditText Password = findViewById(R.id.txPassword);
 
+        CheckBox Natacion = findViewById(R.id.chNatacion);
+        CheckBox Ciclismo = findViewById(R.id.chCiclismo);
+        CheckBox Baloncesto = findViewById(R.id.chBaloncesto);
+        CheckBox Running = findViewById(R.id.chRunning);
+
+        ArrayList<CheckBox> listaDeportesChecked = new ArrayList<CheckBox>();
+
+        if (Natacion.isChecked()){ listaDeportesChecked.add(Natacion); }
+        if (Ciclismo.isChecked()) { listaDeportesChecked.add(Ciclismo); }
+        if (Baloncesto.isChecked()) {listaDeportesChecked.add(Baloncesto); }
+        if (Running.isChecked()) {listaDeportesChecked.add(Running); }
+
     }
+
 
     public void registrar() {
 
