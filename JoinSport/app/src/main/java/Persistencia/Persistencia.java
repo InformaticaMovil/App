@@ -86,9 +86,14 @@ public class Persistencia {
         }
     }
 
-    public static boolean validar(){
+    public static String validarRegistro(String Nombre, String Apellidos, String Sexo, String Telefono, String Ciudad, String Provincia, String Email, String Password) {
+        if (Nombre.getText() == NULL && Apellidos.getText() == NULL && Sexo.getText() == NULL && Telefono.getText() == NULL &&
+                Ciudad.getText() == NULL && Provincia.getText() == NULL && Email.getText() == NULL && Password.getText() == NULL) {
 
+        }
     }
+
+
 
     //NOMBRE
     public static String getNombreUsuario(int id){
