@@ -45,7 +45,33 @@ public class Registro extends AppCompatActivity {
 
     }
 
+    public static String validarRegistro(String Nombre, String Apellidos, String Sexo, String Telefono, String Ciudad, String Provincia, String Email, String Password) {
+        if (Nombre.getText() == NULL){
+            return "Falta el campo Nombre";
+        }
+        if(Apellidos.getText() == NULL){
 
+
+        }
+        if(Sexo.getText() == NULL){
+
+        }
+        if(Telefono.getText() == NULL){
+
+        }
+        if(Ciudad.getText() == NULL){
+
+        }
+        if(Provincia.getText() == NULL){
+
+        }
+        if(Email.getText() == NULL){
+
+        }
+        if(Password.getText() == NULL){
+
+        }
+    }
 
     public void registrar() {
 

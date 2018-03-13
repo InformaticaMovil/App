@@ -66,11 +66,11 @@ public class Persistencia {
     }
 
     public static void eliminarUusario(int id) {
-        Connection con=conectar();
-        String consulta="DELETE FROM Usuario WHERE ID=?";
+        Connection con = conectar();
+        String consulta = "DELETE FROM Usuario WHERE ID=?";
         PreparedStatement ps = null;
         try {
-            ps=con.prepareStatement(consulta);
+            ps = con.prepareStatement(consulta);
             ps.setInt(1, id);
             ps.execute();
         } catch (SQLException e) {
@@ -85,14 +85,6 @@ public class Persistencia {
 
         }
     }
-
-    public static String validarRegistro(String Nombre, String Apellidos, String Sexo, String Telefono, String Ciudad, String Provincia, String Email, String Password) {
-        if (Nombre.getText() == NULL && Apellidos.getText() == NULL && Sexo.getText() == NULL && Telefono.getText() == NULL &&
-                Ciudad.getText() == NULL && Provincia.getText() == NULL && Email.getText() == NULL && Password.getText() == NULL) {
-
-        }
-    }
-
 
 
     //NOMBRE
